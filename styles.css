@@ -1,0 +1,108 @@
+:root{
+  --purple: #5a00c6;       /* sidebar */
+  --mint: #6ff3d0;         /* main background */
+  --accent: #ffd400;       /* acentos */
+  --text-dark: #222;
+  --white: #ffffff;
+  --panel-shadow: rgba(0,0,0,0.12);
+  --radius: 8px;
+}
+
+/* Layout general */
+*{box-sizing:border-box;font-family: "Segoe UI", Roboto, Arial, sans-serif}
+html,body {height:100%; margin:0}
+.page-root {height:100vh}
+.layout {display:flex; height:100%}
+
+/* Sidebar */
+.sidebar {
+  width:220px;
+  background:var(--purple);
+  color:var(--white);
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:flex-start;
+}
+.logo {margin:0; font-size:32px; letter-spacing:2px}
+.subtitle {margin:0 0 8px 0; font-weight:600}
+
+/* Side menu buttons */
+.side-menu {width:100%}
+.side-menu button{
+  width:100%;
+  background:transparent;
+  border-radius:6px;
+  border:none;
+  color:var(--white);
+  padding:10px;
+  margin:6px 0;
+  cursor:pointer;
+  text-align:left;
+}
+.side-menu button:hover{ background:rgba(255,255,255,0.06)}
+
+/* Main area */
+.main-area {
+  flex:1;
+  background: linear-gradient(0deg, var(--mint), #baf6e6);
+  padding:18px;
+  overflow:auto;
+}
+
+/* Login panel */
+.login-panel {
+  max-width:520px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow: 0 4px 12px var(--panel-shadow);
+  text-align:center;
+}
+.hero-img{ width:100%; max-height:160px; object-fit:cover; border-radius:6px 6px 0 0; margin-bottom:12px}
+
+/* Form inputs */
+input[type="text"], input[type="password"], input[type="number"]{
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  width:100%;
+  margin:6px 0;
+}
+.btn-primary{
+  background:var(--purple);
+  color:var(--white);
+  border:none;
+  padding:10px 16px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* Dashboard styles */
+.top-tabs{margin:6px 0}
+.tabs button{margin-right:6px; padding:8px 10px; border-radius:6px; border:none; cursor:pointer}
+.tabs .active{background:var(--accent); color: #111}
+.content { background: rgba(255,255,255,0.7); padding:16px; border-radius:8px; box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+
+/* Form grid */
+.form-grid { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:10px}
+.form-grid label{display:flex; flex-direction:column; width:180px}
+#agregarBtn {padding:10px 14px; background:var(--purple); color:white; border:none; border-radius:6px; cursor:pointer}
+
+/* Table */
+.table-sales {width:100%; border-collapse:collapse; margin-top:12px}
+.table-sales th, .table-sales td {border:1px solid #ddd; padding:10px; text-align:left}
+.blockview {background:#efefef; padding:12px; border-radius:6px; max-height:300px; overflow:auto}
+
+/* Footer row */
+.footer-row{display:flex; justify-content:space-between; align-items:center; margin-top:12px}
+.client-info label{margin-right:8px}
+
+/* responsive */
+@media (max-width:800px){
+  .layout {flex-direction:column}
+  .sidebar {width:100%; flex-direction:row; overflow:auto}
+  .main-area{padding:12px}
+}
