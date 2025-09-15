@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard - Ferretería Estanley</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-root">
+  <div class="layout">
+    <aside class="sidebar">
+      <h1 class="logo">STORE</h1>
+      <p class="subtitle">Ferretería Estanley</p>
+      <nav class="side-menu"> 
+        <button onclick="window.location.href='dashboard.html'">🛒 Nueva Venta</button>
+        <button>👥 Clientes</button>
+        <button>🚚 Proveedor</button>
+        <button>📦 Productos</button>
+        <button>📊 Ventas</button> 
+        <button>⚙️ Config</button>
+        <button>👤 Usuarios</button> 
+      </nav>
+    </aside>
+
+    <main class="main-area">
+      <section class="top-tabs">
+        <!-- pestañas visuales -->
+        <div class="tabs">
+          <button class="active">1</button><button>2</button><button>3</button>
+        </div>
+      </section>
+
+      <section class="content">
+        <h2>Ventas / Nueva Factura</h2>
+
+        <div class="form-grid">
+          <label>Código: <input id="codigo" /></label>
+          <label>Descripción: <input id="descripcion" /></label>
+          <label>Cant: <input id="cantidad" type="number" value="1" /></label>
+          <label>Precio: <input id="precio" type="number" value="0" /></label>
+          <button id="agregarBtn">Agregar</button>
+        </div>
+
+        <div class="stock-row">Stock Disponible: <span id="stockDisponible">---</span></div>
+
+        <table class="table-sales">
+          <thead>
+            <tr><th>ID</th><th>DESCRIPCIÓN</th><th>CANTIDAD</th><th>PRECIO U.</th><th>PRECIO TOTAL</th></tr>
+          </thead>
+          <tbody id="tablaProductos"></tbody>
+        </table>
+
+        <div class="footer-row">
+          <div class="client-info">
+            <label>DNI/RUC: <input id="dni" /></label>
+            <label>Nombre: <input id="nombre" /></label>
+          </div>
+
+          <div class="actions">
+            <button onclick="verChain()">Ver Blockchain</button>
+            <button onclick="addSampleBlock()">Agregar Bloque (Demo)</button>
+            <div>Total a Pagar: <strong id="total">0</strong> 💲</div>
+          </div>
+        </div>
+
+        <h3>Blockchain (respuesta API)</h3>
+        <pre id="blockchain" class="blockview">-- Sin datos --</pre>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
