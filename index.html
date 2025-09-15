@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Ferretería Estanley</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-root">
+  <div class="layout">
+    <aside class="sidebar">
+      <h1 class="logo">STORE</h1>
+      <p class="subtitle">Ferretería Estanley</p>
+      <!-- menú decorativo -->
+      <nav class="side-menu">
+        <button>🛒 Nueva Venta</button>
+        <button>👥 Clientes</button>
+        <button>📦 Productos</button>
+      </nav>
+    </aside>
+
+    <main class="main-area">
+      <div class="login-panel">
+        <img src="images/ferreteria.jpg" alt="Ferretería" class="hero-img"/>
+        <h2>Bienvenido</h2>
+        <p>Por favor ingresa tus credenciales</p>
+
+        <form id="loginForm">
+          <input type="text" id="user" placeholder="Usuario" required />
+          <input type="password" id="pass" placeholder="Contraseña" required />
+          <div class="row">
+            <button type="submit" class="btn-primary">Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // para demo: validación mínima y redirección
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      // podrías validar con el servidor (auth real). Por ahora redirección.
+      window.location.href = "dashboard.html"; 
+    });
+  </script>
+</body>   
+</html>
